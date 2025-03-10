@@ -1,0 +1,17 @@
+body {
+  font-family: "Courier", monospace;
+  background-color: #f8f8f2;
+  color: #000;
+  margin: 40px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+  max-width: 60ch;
+}
