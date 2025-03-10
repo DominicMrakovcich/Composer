@@ -7,27 +7,42 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1>Dominic Mrakovcich - Composer</h1>
-  <hr>
-    <ul>
-        <li><a href="index.html">Index</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><i><b>Library</b></i></li>
-        <li><a href="commission.html">Commission</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-      <p>A collection of works by Dominic Mrakovcich, spanning various projects and compositions.</p>
+    <!-- Main Heading -->
+    <header>
+        <h1>Dominic Mrakovcich - Composer</h1>
+        <hr>
+    </header>
 
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><strong>Library</strong></li> <!-- Improved semantically by using <strong> -->
+            <li><a href="commission.html">Commission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<h2>Alice in Wonderland</h2>
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAWgpftkVgKVk1faI8Z-kcDtlhKY9HHsurI8ayAaV7zI_7Gik6ZONKNC_G8uUo-p8HzcCXp1SryVWmGs8&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-<div id="paypal-container-NV9ZHQGBRXBVE"></div>
-<script>
-  paypal.HostedButtons({
-    hostedButtonId: "NV9ZHQGBRXBVE",
-  }).render("#paypal-container-NV9ZHQGBRXBVE")
-</script>
+    <!-- Introduction Paragraph -->
+    <section>
+        <p>A collection of works by Dominic Mrakovcich, spanning various projects and compositions.</p>
+    </section>
 
-    
+    <!-- Project/Composition -->
+    <section>
+        <h2>Alice in Wonderland</h2>
+    </section>
+
+    <!-- PayPal Button Integration -->
+    <section id="paypal-section">
+        <script src="https://www.paypal.com/sdk/js?client-id=BAAWgpftkVgKVk1faI8Z-kcDtlhKY9HHsurI8ayAaV7zI_7Gik6ZONKNC_G8uUo-p8HzcCXp1SryVWmGs8&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+        <div id="paypal-container-NV9ZHQGBRXBVE"></div>
+        <script>
+            paypal.HostedButtons({
+                hostedButtonId: "NV9ZHQGBRXBVE",
+            }).render("#paypal-container-NV9ZHQGBRXBVE")
+        </script>
+    </section>
 </body>
 </html>
