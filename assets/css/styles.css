@@ -1,3 +1,4 @@
+/* Global Body Styling */
 body {
   font-family: "Courier New", Courier, monospace;
   font-weight: 300;
@@ -9,18 +10,34 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Aligns the content to the left */
+  justify-content: flex-start; /* Aligns the content to the top */
   min-height: 100vh;
-  text-align: center;
+  text-align: justify; /* Justify text in all paragraphs */
 }
 
+/* Navigation Styling (Top Left) */
+nav {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: #222;
+}
+
+/* Header Styling */
 h1 {
   margin-top: 20px;
   margin-bottom: 10px;
   font-weight: 400;
+  text-align: left; /* Align header to the left */
+  font-size: 2rem;
+  color: #333; /* Slightly darker for headers */
 }
 
+/* List Styling */
 ul {
   list-style: none;
   padding: 0;
@@ -30,13 +47,18 @@ li {
   margin-bottom: 10px;
 }
 
+/* Paragraph Styling */
 p {
   margin-bottom: 20px;
-  max-width: 60ch;
+  max-width: 80ch; /* Wider text area for better readability */
   font-weight: 300;
+  text-align: justify; /* Justified text for all paragraphs */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333; /* Darker gray for better readability */
 }
 
-/* Curved horizontal rule */
+/* Curved Horizontal Rule */
 hr {
   border: none;
   height: 4px;
@@ -54,5 +76,14 @@ hr {
 
   p {
     max-width: 90%;
+    font-size: 1rem; /* Adjust font size on smaller screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Slightly smaller header for mobile */
+  }
+
+  nav {
+    font-size: 14px; /* Smaller nav font on mobile */
   }
 }
