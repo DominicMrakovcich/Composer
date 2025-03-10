@@ -1,4 +1,4 @@
-/* Global Body Styling */
+\/* Global Body Styling */
 body {
   font-family: "Courier New", Courier, monospace;
   font-weight: 300;
@@ -18,18 +18,22 @@ body {
 
 /* Navigation Styling (Top Left) */
 nav {
-  position: absolute;
+  position: fixed; /* Fixed position at the top of the page */
   top: 20px;
   left: 20px;
   font-weight: bold;
   font-size: 16px;
   letter-spacing: 0.1em;
   color: #222;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  background-color: #fff; /* Adding background for visibility */
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Header Styling */
 h1 {
-  margin-top: 20px;
+  margin-top: 80px; /* Adding space for the fixed nav */
   margin-bottom: 10px;
   font-weight: 400;
   text-align: left; /* Align header to the left */
@@ -85,5 +89,7 @@ hr {
 
   nav {
     font-size: 14px; /* Smaller nav font on mobile */
+    top: 10px; /* Reduces the top margin for mobile */
+    left: 10px; /* Move nav to the left */
   }
 }
