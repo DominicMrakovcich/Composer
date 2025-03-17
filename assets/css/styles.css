@@ -10,7 +10,6 @@ body {
     line-height: 1.7;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
 }
@@ -72,19 +71,12 @@ header {
     padding: 25px;
 }
 
-h1 {
-    font-weight: 400;
-    font-size: 2.4rem;
-    margin: 0;
-    color: #222;
-}
-
 /* Main Content */
 main {
     width: 100%;
     max-width: 850px;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
 }
 
 /* Paragraph Styling */
@@ -94,6 +86,7 @@ p {
     line-height: 1.8;
     max-width: 80ch;
     color: #333;
+    text-align: left;
 }
 
 /* Horizontal Rule */
@@ -102,7 +95,7 @@ hr {
     height: 1px;
     background: #ddd;
     border: none;
-    margin: 25px auto;
+    margin: 25px 0;
 }
 
 /* Table Styling */
@@ -133,6 +126,7 @@ table caption {
     font-weight: bold;
     margin-bottom: 10px;
     color: #222;
+    text-align: left;
 }
 
 /* Button Styling */
@@ -146,6 +140,7 @@ button {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: left;
 }
 
 button:hover {
@@ -174,10 +169,6 @@ button:disabled {
         padding: 20px;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
     main {
         padding: 15px;
     }
@@ -196,4 +187,3 @@ button:disabled {
         padding: 12px 20px;
     }
 }
-
