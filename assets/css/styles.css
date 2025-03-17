@@ -12,16 +12,12 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
-}
-
-body {
     align-items: flex-start; /* Aligns the content to the left */
 }
 
 main, header {
     margin-left: 0; /* Ensures main content starts from the left */
 }
-
 
 /* Navigation Styling */
 nav {
