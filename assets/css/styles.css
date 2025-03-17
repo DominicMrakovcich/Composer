@@ -16,7 +16,7 @@ body {
 }
 
 main, header {
-    margin-left: 0; /* Ensures main content starts from the left */
+    margin-left: 12%; /* Ensures main content starts from the left */
 }
 
 /* Navigation Styling */
