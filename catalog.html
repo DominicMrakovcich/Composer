@@ -1,49 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library - Dominic Mrakovcich</title>
+    <title>Dominic Mrakovcich - Catalog</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script defer src="assets/js/catalog.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="index.html">Index</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><strong>Library</strong></li>
-            <li><a href="commission.html">Commission</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+	<li class="selected"><a href="Catalog">Catalog</a></li>
+        <li><a href="commission.html">Commission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-    
-    <header>
-        <h1>Dominic Mrakovcich - Composer</h1>
-        <hr>
-    </header>
-    
-    <section>
-        <p>A collection of works by Dominic Mrakovcich, spanning various projects and compositions.</p>
-        <input type="text" id="searchBar" placeholder="Search by title, genre, or instrumentation..." onkeyup="searchWorks()">
-    </section>
-    
-    <section>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Genre</th>
-                    <th>Instrumentation</th>
-                    <th>Format</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody id="catalogTable">
-                <!-- Works will be dynamically loaded here -->
-            </tbody>
-        </table>
-    </section>
-</body>
+ <main>
+        <h2>Catalog</h2>
+    <!-- Main Content Section -->
+      <section id="catalog">
+        <p>Browse works available for free download (PDF) or order printed copies. Streaming available below.</p>
+        
+        <!-- List of Works -->
+        <ul>
+          <li><b>Solo</b></li>
+          <ul>
+            <li>6 + 5 + 6 and 5 + 6</li>
+            <li>Dva Povrća Korijena</li>
+            <li>Partita for Trumpet</li>
+            <li>Passacaglia</li>
+            <li>Vento Cycles</li>
+          </ul>
+          <li><b>Duet</b></li>
+          <ul>
+            <li>Echos & Canons</li>
+            <li>Korijeni Vrba</li>
+            <li>Reflexão ou refração?</li>
+            <li>Snowshoe Night</li>
+            <li>Willow Roots and Branches</li>
+          </ul>
+          <li><b>Trio</b></li>
+          <ul>
+            <li>The First Approach</li>
+            <li>Two Modules</li>
+          </ul>
+          <li><b>String Quartet</b></li>
+          <ul>
+            <li><a href="#string-quartet-1">String Quartet No. 1</a></li>
+            <li><a href="#string-quartet-2">String Quartet No. 2</a></li>
+            <li><a href="#string-quartet-3">String Quartet No. 3</a></li>
+          </ul>
+          <li><b>Woodwind Quintet</b></li>
+          <ul>
+            <li>A Sketch of Cape St. Mary’s</li>
+          </ul>
+          <li><b>Chamber Ensemble</b></li>
+          <ul>
+            <li>Sinfonietta</li>
+          </ul>
+          <li><b>Orchestra</b></li>
+          <ul>
+            <li>Study</li>
+          </ul>
+          <li><b>Ballet</b></li>
+          <ul>
+            <li>Alice in Wonderland: An Immersive Experience</li>
+          </ul>
+          <li><b>Opera</b></li>
+          <li><b>Film Soundtrack</b></li>
+          <ul>
+            <li>No Care in The World</li>
+            <li>It's Not Me</li>
+            <li>La Janela Secreta</li>
+            <li>The Mrakovcich Brothers</li>
+          </ul>
+        </ul>
+
+        <!-- Detailed Works Information -->
+        <h2>Sections of Works Information</h2>
+
+        <section id="string-quartet-1">
+          <h3>String Quartet No. 1</h3>
+          <ul>
+            <li><strong>Composer:</strong> Dominic Mrakovcich</li>
+            <li><strong>Instrumentation:</strong> 2 Violins, Viola, Cello</li>
+            <li><strong>Duration:</strong> 12 minutes</li>
+            <li><strong>Difficulty:</strong> Advanced</li>
+            <li><strong>Dates:</strong> March 10-14, 2025</li>
+            <li><strong>Sheet Music:</strong>
+              <ul>
+                <li><a href="pdfs/stringquartet1/stringquartet1-fullscore.pdf" target="_blank">Full Score</a></li>
+                <li><a href="pdfs/stringquartet1/parts.zip" target="_blank">Parts</a></li>
+              </ul>
+            </li>
+            <li><strong>Listen:</strong> <a href="https://dmrakovcich.bandcamp.com/album/string-quartet-no-1" target="_blank">Stream on Bandcamp</a></li>
+          </ul>
+        </section>
+
+        <section id="string-quartet-2">
+          <h3>String Quartet No. 2</h3>
+          <ul>
+            <li><strong>Composer:</strong> Dominic Mrakovcich</li>
+            <li><strong>Instrumentation:</strong> 2 Violins, Viola, Cello</li>
+            <li><strong>Duration:</strong> 10 minutes</li>
+            <li><strong>Difficulty:</strong> Intermediate</li>
+            <li><strong>Dates:</strong> March 14-17, 2025</li>
+            <li><strong>Sheet Music:</strong>
+              <ul>
+                <li><a href="pdfs/stringquartet2/fullscore.pdf" target="_blank">Full Score</a></li>
+                <li><a href="pdfs/stringquartet2/parts.zip" target="_blank">Parts</a></li>
+              </ul>
+            </li>
+            <li><strong>Listen:</strong> <a href="https://bandcamp.com/album/string-quartet-no-2" target="_blank">Stream on Bandcamp</a></li>
+          </ul>
+        </section>
+
+        <section id="string-quartet-3">
+          <h3>String Quartet No. 3</h3>
+          <ul>
+            <li><strong>Composer:</strong> Dominic Mrakovcich</li>
+            <li><strong>Instrumentation:</strong> 2 Violins, Viola, Cello</li>
+            <li><strong>Duration:</strong> 15 minutes</li>
+            <li><strong>Difficulty:</strong> Advanced</li>
+            <li><strong>Dates:</strong> March 17-20, 2025</li>
+            <li><strong>Sheet Music:</strong>
+              <ul>
+                <li><a href="pdfs/stringquartet3/fullscore.pdf" target="_blank">Full Score</a></li>
+                <li><a href="pdfs/stringquartet3/parts.zip" target="_blank">Parts</a></li>
+              </ul>
+            </li>
+            <li><strong>Listen:</strong> <a href="https://bandcamp.com/album/string-quartet-no-3" target="_blank">Stream on Bandcamp</a></li>
+          </ul>
+        </section>
+
+        <!-- Add More Sections for Other Works -->
+
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2025 Dominic Mrakovcich - All Rights Reserved</p>
+    </footer>
+
+  </body>
 </html>
