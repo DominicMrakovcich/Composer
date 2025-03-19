@@ -10,15 +10,8 @@
 
 /* Site Title Styling */
 .site-name {
-    color: #9caea4;
-    font-style: italic;
-    font-family: 'Great Vibes', cursive;
-    font-size: 28px;
-    outline: none;
-    border: none;
-    background: none;
+    color: black;
 }
-
 /* Body Styling */
 body {
     font-family: Courier, monospace; /* Only Courier for body */
