@@ -59,6 +59,7 @@ nav {
 .site-title {
     font-size: 22px;  /* Slightly larger for elegance */
     font-weight: bold;
+    border: none;
     color: var(--site-title-color); /* Elegant muted blue */
     margin-right: 20px;
     text-transform: uppercase; /* Adds a refined touch */
