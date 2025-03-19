@@ -10,8 +10,9 @@
 
 /* Site Title Styling */
 .site-name {
-    color: black;
+    color: var(--primary-color);
 }
+
 /* Body Styling */
 body {
     font-family: Courier, monospace; /* Only Courier for body */
@@ -47,8 +48,8 @@ nav {
     backdrop-filter: blur(8px);
     padding: 10px 30px;
     display: flex;
-    align-items: center; /* Align title and nav items */
-    justify-content: space-between; /* Space title and nav menu */
+    align-items: center;
+    justify-content: space-between;
     font-size: 14px;
     font-weight: bold;
     border-bottom: 1px solid var(--light-color);
@@ -71,26 +72,26 @@ nav ul {
 
 nav li {
     padding: 8px 18px;
-    border-radius: 20px; /* Rounded corners for button effect */
-    border: 2px solid var(--primary-color); /* Boxed border */
-    background-color: transparent; /* Transparent background by default */
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
 }
 
 nav li.selected {
-    background-color: var(--primary-color); /* Dark background when selected */
-    color: white; /* Light text on dark background */
-    border-color: var(--primary-color); /* Match border color to the background */
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 nav li.selected a {
-    color: white; /* Ensure the link text inside the selected button is white */
+    color: white;
 }
 
 nav a {
     text-decoration: none;
     color: var(--primary-color);
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav a:hover {
@@ -106,7 +107,7 @@ header {
 
 /* Main Content */
 main {
-    margin-top: 120px; /* Adjusted for fixed nav */
+    margin-top: 120px;
     padding: 20px 15px;
     text-align: left;
 }
