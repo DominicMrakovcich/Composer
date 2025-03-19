@@ -7,6 +7,16 @@
     --text-color: #555;
     --light-color: #f0f0f0;
 }
+/* Site Title styling */
+.site-name {
+    color: #9caea4;
+    font-style: italic;
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    outline: none;
+    border: none;
+    background: none;
+}
 
 /* Body Styling */
 body {
