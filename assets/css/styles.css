@@ -7,6 +7,8 @@
     --text-color: #555;
     --light-color: #f0f0f0;
     --font-family: 'Courier', monospace;
+    --site-title-color: #4B8DFF; /* Elegant muted blue */
+    --site-title-hover-color: #ffbc00; /* Elegant soft gold on hover */
 }
 
 /* Body Styling */
@@ -53,11 +55,19 @@ nav {
     z-index: 10;
 }
 
+/* Elegant Site Title */
 .site-title {
-    font-size: 18px;
+    font-size: 22px;  /* Slightly larger for elegance */
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--site-title-color); /* Elegant muted blue */
     margin-right: 20px;
+    text-transform: uppercase; /* Adds a refined touch */
+    letter-spacing: 1px; /* Adds elegance and airiness */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.site-title:hover {
+    color: var(--site-title-hover-color); /* Subtle gold on hover */
 }
 
 nav ul {
