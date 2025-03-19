@@ -26,6 +26,7 @@ body {
     justify-content: flex-start;
     min-height: 100vh;
     align-items: center;
+    position: relative; /* For positioning sparkles */
 }
 
 /* Header Styling */
@@ -168,6 +169,87 @@ button {
 
 button:hover {
     background-color: var(--highlight-color);
+}
+
+/* Sparkle Styling */
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes sparkle-move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(200px, -200px); /* Change distance for different movement */
+    }
+}
+
+/* Sparkles container */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Sparkles effect */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light sparkle color */
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 2s infinite, sparkle-move 3s infinite linear;
+}
+
+/* Randomize animation delays and movements for each sparkle */
+.sparkle:nth-child(odd) {
+    animation-duration: 3s, 4s;
+}
+
+.sparkle:nth-child(even) {
+    animation-duration: 2.5s, 5s;
+}
+
+/* Sparkles placement - create a large number of sparkles */
+@keyframes random-sparkle {
+    0% {
+        left: 10%;
+        top: 10%;
+    }
+    100% {
+        left: 90%;
+        top: 90%;
+    }
+}
+
+/* Simulate random sparkle generation with varying speed */
+.sparkles::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    animation: random-sparkle 1.5s infinite ease-in-out;
 }
 
 /* Mobile Optimization */
