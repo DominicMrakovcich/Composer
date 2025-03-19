@@ -6,16 +6,12 @@
     --highlight-color: #ffbc00;
     --text-color: #555;
     --light-color: #f0f0f0;
-}
-
-/* Site Title Styling */
-.site-name {
-    color: var(--primary-color);
+    --font-family: 'Courier', monospace;
 }
 
 /* Body Styling */
 body {
-    font-family: Courier, monospace; /* Only Courier for body */
+    font-family: var(--font-family);
     font-weight: 300;
     letter-spacing: 0.05em;
     background-color: var(--secondary-color);
@@ -27,15 +23,16 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
 }
 
-/* Ensure space for fixed nav bar */
-main, header {
+/* Header Styling */
+header {
     width: 100%;
     max-width: 850px;
-    padding: 20px;
-    text-align: left;
+    padding: 25px 15px;
+    text-align: center;
+    margin-top: 90px;
 }
 
 /* Navigation Styling */
@@ -46,7 +43,7 @@ nav {
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(8px);
-    padding: 10px 30px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,18 +95,13 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* Header Styling */
-header {
-    margin-top: 90px;
-    padding: 25px 0;
-    text-align: center;
-}
-
 /* Main Content */
 main {
-    margin-top: 120px;
+    width: 100%;
+    max-width: 850px;
     padding: 20px 15px;
     text-align: left;
+    margin-top: 120px;
 }
 
 /* Paragraph Styling */
@@ -193,5 +185,32 @@ button:hover {
     button {
         width: 100%;
         padding: 10px 16px;
+    }
+}
+
+/* Mobile-First Design */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav li {
+        padding: 6px 14px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px 18px;
     }
 }
