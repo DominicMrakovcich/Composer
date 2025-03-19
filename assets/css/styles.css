@@ -1,3 +1,6 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /* Global Styles */
 :root {
     --primary-color: #333;
@@ -6,15 +9,18 @@
     --highlight-color: #ffbc00;
     --text-color: #000;
     --light-color: #f0f0f0;
-    --font-family: 'Courier', monospace, sans-serif;
+    --font-family: "Courier Prime", monospace;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-style-regular: normal;
+    --font-style-italic: italic;
     --site-title-color: black; /* Corrected */
     --site-title-hover-color: #ffbc00;
 }
-
 /* Body Styling */
 body {
     font-family: var(--font-family);
-    font-weight: 300;
+    font-weight: var(--font-weight-regular);
     letter-spacing: 0.05em;
     background-color: var(--secondary-color);
     color: var(--text-color);
