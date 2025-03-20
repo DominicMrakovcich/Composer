@@ -3,21 +3,21 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #333;
-    --secondary-color: #fff;
-    --accent-color: #a1a1a1;
-    --highlight-color: #ffbc00;
-    --text-color: #000;
-    --light-color: #f0f0f0;
-    --font-family: "Courier Prime", monospace;
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
-    --font-style-regular: normal;
-    --font-style-italic: italic;
-    --site-title-color: black; /* Corrected */
-    --site-title-hover-color: #ffbc00;
+    --primary-color: #333;                /* Main color for text and important elements */
+    --secondary-color: #fff;               /* Background and light elements */
+    --accent-color: #a1a1a1;               /* Accent color for borders, lines, etc. */
+    --highlight-color: #ffbc00;            /* Highlight color for important features */
+    --text-color: #000;                    /* Default text color */
+    --light-color: #f0f0f0;                /* Light background or neutral elements */
+    --font-family: "Courier Prime", monospace; /* Main font for the site */
+    --font-weight-regular: 400;            /* Regular text weight */
+    --font-weight-bold: 700;               /* Bold text weight */
+    --font-style-regular: normal;          /* Default font style */
+    --font-style-italic: italic;           /* Italicized font style */
+    --site-title-color: var(--primary-color); /* Site title color */
+    --site-title-hover-color: var(--highlight-color); /* Hover color for site title */
 }
-/* Body Styling */
+
 body {
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
