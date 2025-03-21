@@ -6,7 +6,7 @@
     --primary-color: #333;                /* Main color for text and important elements */
     --secondary-color: #fff;               /* Background and light elements */
     --accent-color: #a1a1a1;               /* Accent color for borders, lines, etc. */
-    --highlight-color: #ffbc00;            /* Highlight color for important features */
+    --highlight-color: #00b078;            /* Highlight color for important features */
     --text-color: #000;                    /* Default text color */
     --light-color: #f0f0f0;                /* Light background or neutral elements */
     --font-family: "Courier Prime", monospace; /* Main font for the site */
@@ -49,6 +49,7 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
 }
 
 /* Navigation */
