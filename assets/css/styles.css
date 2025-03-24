@@ -35,6 +35,16 @@ body {
     position: relative;
 }
 
+/* Icon Styling */
+.icon {
+    width: 2em;  /* Ensures consistent width for the icon */
+    height: 2em; /* Ensures consistent height for the icon */
+    border: none; /* No border around the icon */
+    display: inline-block; /* Ensures it behaves like an inline element */
+    margin: 0 8px; /* Spacing between icons */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for scaling */
+}
+
 /* Header */
 header {
     width: 100%;
@@ -89,20 +99,20 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
+    align-items: center; /* Ensure icons are vertically aligned with text */
 }
 
 nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 20px;
     border-radius: 25px;
     border: 2px solid var(--primary-color);
     background-color: transparent;
     transition: background 0.3s, border-color 0.3s, color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Selected State for Navigation Links */
 nav li.selected {
     background-color: var(--primary-color);
     color: white;
@@ -121,6 +131,11 @@ nav a {
 
 nav a:hover {
     color: var(--accent-color);
+}
+
+/* Hover Effect on Icons */
+.icon:hover {
+    transform: scale(1.2); /* Slightly scale the icon on hover */
 }
 
 /* Main Content */
