@@ -1,23 +1,23 @@
-/* styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Global Styles */
 :root {
-    --primary-color: #333;                /* Main color for text and important elements */
-    --secondary-color: #fff;               /* Background and light elements */
-    --accent-color: #a1a1a1;               /* Accent color for borders, lines, etc. */
-    --highlight-color: #00b078;            /* Highlight color for important features */
-    --text-color: #000;                    /* Default text color */
-    --light-color: #f0f0f0;                /* Light background or neutral elements */
-    --font-family: "Courier Prime", monospace; /* Main font for the site */
-    --font-weight-regular: 400;            /* Regular text weight */
-    --font-weight-bold: 700;               /* Bold text weight */
-    --font-style-regular: normal;          /* Default font style */
-    --font-style-italic: italic;           /* Italicized font style */
-    --site-title-color: var(--primary-color); /* Site title color */
-    --site-title-hover-color: var(--highlight-color); /* Hover color for site title */
+    --primary-color: #333;
+    --secondary-color: #fff;
+    --accent-color: #a1a1a1;
+    --highlight-color: #00b078;
+    --text-color: #000;
+    --light-color: #f0f0f0;
+    --font-family: "Courier Prime", monospace;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-style-regular: normal;
+    --font-style-italic: italic;
+    --site-title-color: var(--primary-color);
+    --site-title-hover-color: var(--highlight-color);
 }
 
+/* Global Body Styling */
 body {
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
@@ -35,21 +35,32 @@ body {
     position: relative;
 }
 
+/* Icon Styling */
+.icon {
+    width: 2em;  /* Ensures consistent width for the icon */
+    height: 2em; /* Ensures consistent height for the icon */
+    border: none; /* No border around the icon */
+    display: inline-block; /* Ensures it behaves like an inline element */
+    margin: 0 8px; /* Spacing between icons */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for scaling */
+}
+
 /* Header */
 header {
     width: 100%;
     max-width: 850px;
     padding: 20px 15px;
     text-align: center;
-    margin-top: 0px;
 }
+
+/* Headshot Styling */
 .headshot {
-    display: flex;              /* Added this line to enable Flexbox */
-    width: 50%;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 /* Navigation */
@@ -59,18 +70,21 @@ nav {
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    padding: 12px 15px;
+    backdrop-filter: blur(10px);
+    padding: 20px 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     font-size: 14px;
     font-weight: bold;
-    border-bottom: 1px solid var(--light-color);
+    border-bottom: 2px solid var(--light-color);
     z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Site Title */
 .site-title {
+    color: var(--site-title-color);
+    cursor: pointer;
     border: none;
 }
 
@@ -82,13 +96,18 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     padding: 0;
+    margin: 0;
+    align-items: center; /* Ensure icons are vertically aligned with text */
 }
 
 nav li {
-    padding: 8px 18px;
-    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 25px;
     border: 2px solid var(--primary-color);
     background-color: transparent;
     transition: background 0.3s, border-color 0.3s, color 0.3s;
@@ -97,13 +116,13 @@ nav li {
 nav li.selected {
     background-color: var(--primary-color);
     color: white;
-    border-color: var(--primary-color);
 }
 
 nav li.selected a {
     color: white;
 }
 
+/* Link Styling */
 nav a {
     text-decoration: none;
     color: var(--primary-color);
@@ -114,12 +133,16 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+/* Hover Effect on Icons */
+.icon:hover {
+    transform: scale(1.2); /* Slightly scale the icon on hover */
+}
+
 /* Main Content */
 main {
     width: 100%;
     max-width: 850px;
     padding: 20px 15px;
-    text-align: left;
     margin-top: 120px;
 }
 
@@ -181,7 +204,7 @@ button {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
@@ -229,7 +252,7 @@ button:hover {
     position: absolute;
     width: 4px;
     height: 4px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--highlight-color);
     border-radius: 50%;
     opacity: 0;
     animation: sparkle 2s infinite, sparkle-move 3s infinite linear;
@@ -249,7 +272,6 @@ button:hover {
         padding: 12px;
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
     .site-title {
@@ -296,4 +318,64 @@ button:hover {
     button {
         padding: 12px 18px;
     }
+}
+
+/* Cat Styling */
+.cat {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease, left 1s ease, top 1s ease;
+    user-select: none;
+    will-change: transform, left, top;
+}
+
+.cat.moving {
+    animation: wiggle 0.6s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.cat:hover {
+    transform: scale(1.1);
+}
+
+.cat-container {
+    position: relative;
+}
+
+.speech-bubble {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 200px;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.headshot:hover {
+    transform: scale(1.1);
 }
