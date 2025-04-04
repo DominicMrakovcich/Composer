@@ -37,12 +37,12 @@ body {
 
 /* Icon Styling */
 .icon {
-    width: 2em;  /* Ensures consistent width for the icon */
-    height: 2em; /* Ensures consistent height for the icon */
-    border: none; /* No border around the icon */
-    display: inline-block; /* Ensures it behaves like an inline element */
-    margin: 0 8px; /* Spacing between icons */
-    transition: transform 0.2s ease-in-out; /* Smooth transition for scaling */
+    width: 2em;
+    height: 2em;
+    border: none;
+    display: inline-block;
+    margin: 0 8px;
+    transition: transform 0.2s ease-in-out;
 }
 
 /* Header */
@@ -99,7 +99,7 @@ nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
-    align-items: center; /* Ensure icons are vertically aligned with text */
+    align-items: center;
 }
 
 nav li {
@@ -135,7 +135,7 @@ nav a:hover {
 
 /* Hover Effect on Icons */
 .icon:hover {
-    transform: scale(1.2); /* Slightly scale the icon on hover */
+    transform: scale(1.2);
 }
 
 /* Main Content */
@@ -212,75 +212,50 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Sparkle Effect */
-@keyframes sparkle {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
+/* Mobile Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
 }
 
-@keyframes sparkle-move {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(150px, -150px);
-    }
-}
-
-.sparkles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: hidden;
-}
-
-.sparkle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: var(--highlight-color);
-    border-radius: 50%;
-    opacity: 0;
-    animation: sparkle 2s infinite, sparkle-move 3s infinite linear;
-}
-
-.sparkle:nth-child(odd) {
-    animation-duration: 3s, 4s;
-}
-
-.sparkle:nth-child(even) {
-    animation-duration: 2.5s, 5s;
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: 0.3s;
 }
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-    nav {
-        padding: 12px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .site-title {
-        margin-bottom: 10px;
+    .menu-toggle {
+        display: flex;
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
     }
 
     main {
@@ -347,35 +322,4 @@ button:hover {
 
 .cat-container {
     position: relative;
-}
-
-.speech-bubble {
-    display: none;
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 10px;
-    max-width: 200px;
-    font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-}
-
-.speech-bubble:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-}
-
-.headshot:hover {
-    transform: scale(1.1);
 }
