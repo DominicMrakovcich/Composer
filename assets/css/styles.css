@@ -4,23 +4,31 @@
 :root {
     --primary-color: #333;
     --secondary-color: #f4f4f4;
-    --accent-color: #a1a1a1;
-    --highlight-color: #00b078;
+    --highlight-color: red;
     --text-color: #222;
     --light-color: #f4f4f4;
     --font-family: "Courier Prime", monospace;
-    --font-weight-regular: 400;
-    --font-weight-bold: 600;
-    --font-style-regular: normal;
-    --font-style-italic: italic;
-    --site-title-color: var(--primary-color);
-    --site-title-hover-color: var(--highlight-color);
+    --font-weight: 400;
+    --font-size: 16px; /* Unified font size for all text */
+}
+
+.headshot {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Universal Box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 /* Global Body Styling */
 body {
     font-family: var(--font-family);
-    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size); /* Unified font size for all text */
+    font-weight: var(--font-weight);
     letter-spacing: 0.02em;
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -32,65 +40,29 @@ body {
     justify-content: flex-start;
     min-height: 100vh;
     align-items: center;
-    position: relative;
-    box-sizing: border-box;
 }
 
-/* Header */
+/* Header - Now looks like a paragraph */
 header {
     width: 100%;
     max-width: 850px;
-    padding: 18px 12px;
+    padding: 0;
     text-align: center;
-    margin: 0 15px;
-    background-color: var(--secondary-color); /* More subtle background */
-    border-radius: 12px; /* Slightly rounded corners */
-    border: 1px solid var(--light-color); /* Soft border */
+    background-color: var(--secondary-color);
+    border: 1px solid var(--light-color);
 }
 
-header h1 {
-    font-size: 1.8rem;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.01em;
+header h1, h2, h3, h4 {
+    font-size: var(--font-size); /* Same as the body font size */
+    font-weight: var(--font-weight);
     color: var(--primary-color);
-    transition: color 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+    transition: color 0.2s;
 }
 
-header h1:hover {
+header h1, h2, h3, h4:hover {
     color: var(--highlight-color);
-}
-
-/* Icon Styling */
-.icon {
-    width: 1.5em;
-    height: 1.5em;
-    display: inline-block;
-    margin: 0 8px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
-    opacity: 0.8;
-}
-
-.icon:hover {
-    transform: scale(1.1); /* Subtle scaling */
-    opacity: 1;
-}
-
-/* Headshot Styling */
-.headshot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 35%;
-    margin: 30px auto;
-    padding: 10px;
-    border-radius: 50%;
-    border: 1px solid var(--light-color); /* Light border to keep flat style */
-}
-
-.headshot img {
-    border-radius: 50%;
-    width: 100%;
-    max-width: 120px;
 }
 
 /* Navigation */
@@ -99,49 +71,28 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* Slightly more opaque background */
-    backdrop-filter: blur(8px); /* Softer blur */
-    padding: 8px 15px;
+    backdrop-filter: blur(8px);
+    padding: 4px 10px;
     display: flex;
     justify-content: center;
-    font-size: 12px;
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size); /* Same font size as the body */
     border-bottom: 1px solid var(--light-color);
     z-index: 10;
-}
-
-.site-title {
-    color: var(--site-title-color);
-    cursor: pointer;
-    text-align: center;
-    margin: 0 auto;
-    font-size: 1.4rem;
-    font-weight: var(--font-weight-bold);
-    transition: color 0.3s ease-in-out;
-}
-
-.site-title:hover {
-    color: var(--site-title-hover-color);
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 18px;
+    gap: 8px;
     padding: 0;
     margin: 0;
-    align-items: center;
 }
 
 nav li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    border-radius: 25px;
-    border: 1px solid var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 18px;
     background-color: transparent;
-    transition: background 0.3s, border-color 0.3s, color 0.3s;
+    transition: background 0.2s;
 }
 
 nav li.selected {
@@ -149,14 +100,10 @@ nav li.selected {
     color: white;
 }
 
-nav li.selected a {
-    color: white;
-}
-
 nav a {
     text-decoration: none;
     color: var(--primary-color);
-    transition: color 0.3s ease-in-out;
+    transition: color 0.2s;
 }
 
 nav a:hover {
@@ -167,56 +114,46 @@ nav a:hover {
 main {
     width: 100%;
     max-width: 850px;
-    padding: 20px 18px;
-    margin-top: 100px;
-    box-sizing: border-box;
-    background-color: var(--light-color); /* Simple, flat background */
-    border-radius: 12px;
-    border: 1px solid var(--light-color); /* Soft border */
+    padding: 8px;
+    margin-top: 60px;
+    background-color: var(--light-color);
+    border: 1px solid var(--light-color);
 }
 
-/* Typography */
-p {
-    font-size: 0.85rem;
-    line-height: 1.3;
+/* Typography (Everything looks like a paragraph) */
+p, h1, h3 {
+    font-size: var(--font-size); /* Unified font size for all text */
+    line-height: 1.4;
     color: var(--text-color);
-    max-width: 70ch;
-    margin: 0 auto;
-}
-
-h3 {
-    font-size: 1.1rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--primary-color);
-    margin-bottom: 8px;
+    margin: 0;
+    padding: 0;
+    font-weight: var(--font-weight); /* Ensures no bold headers */
 }
 
 /* Horizontal Rule */
 hr {
-    width: 85%;
+    width: 80%;
     height: 1px;
     background: var(--light-color);
     border: none;
-    margin: 15px 0;
+    margin: 6px 0;
 }
 
 /* Table */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 4px;
 }
 
 th, td {
-    padding: 6px 10px;
+    padding: 4px 6px;
     border: 1px solid var(--light-color);
     text-align: left;
-    font-size: 0.85rem;
 }
 
 th {
     background-color: var(--secondary-color);
-    font-weight: var(--font-weight-bold);
 }
 
 tr:hover {
@@ -225,83 +162,48 @@ tr:hover {
 
 /* Buttons */
 button {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    font-weight: var(--font-weight-bold);
-    border-radius: 20px;
+    padding: 4px 8px;
+    font-size: var(--font-size); /* Unified font size */
+    font-weight: var(--font-weight);
+    border-radius: 16px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s ease;
+    transition: background-color 0.1s, transform 0.1s;
 }
 
 button:hover {
     background-color: var(--highlight-color);
-    transform: translateY(-3px);
+    transform: translateY(-1px);
 }
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        position: absolute;
-        top: 50px;
-        left: 0;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav li {
-        width: 100%;
-        text-align: center;
-        padding: 8px;
-    }
-
     main {
-        margin-top: 120px;
-        padding: 15px 12px;
+        margin-top: 80px;
+        padding: 6px;
     }
 
     button {
         width: 100%;
-        padding: 8px 12px;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 13px;
+        font-size: 14px; /* Slightly smaller font on small screens */
     }
 
     nav {
-        padding: 6px;
-    }
-
-    nav ul {
-        gap: 6px;
-    }
-
-    nav li {
-        padding: 6px 12px;
+        padding: 2px 8px;
     }
 
     main {
-        padding: 12px;
+        padding: 6px;
     }
 
     button {
-        padding: 10px 14px;
+        padding: 6px 10px;
     }
 }
 
@@ -309,7 +211,7 @@ button:hover {
 .cat {
     position: absolute;
     cursor: pointer;
-    transition: transform 0.3s ease, left 1s ease, top 1s ease;
+    transition: transform 0.2s, left 1s, top 1s;
     user-select: none;
 }
 
@@ -325,27 +227,34 @@ button:hover {
     100% { transform: rotate(0deg); }
 }
 
-.cat:hover {
-    transform: scale(1.05);
+/* Icon Styling */
+.icon {
+    width: 2em; /* Reduced size to make icons smaller */
+    height: 2em; /* Maintain aspect ratio */
+    display: inline-block;
+    margin: 0 6px; /* Adjust spacing */
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.cat-container {
-    position: relative;
+.icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    opacity: 1; /* Full opacity on hover */
 }
 
 /* Body Button Styling */
 .body-button {
     display: inline-block;
-    padding: 8px 14px;
-    margin-bottom: 6px;
-    border-radius: 20px;
+    padding: 4px 8px;
+    margin-bottom: 4px;
+    border-radius: 16px;
     border: 1px solid var(--primary-color);
     background-color: transparent;
     text-align: center;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight);
     color: var(--primary-color);
     text-decoration: none;
-    transition: background 0.3s, border-color 0.3s, color 0.3s;
+    transition: background 0.1s, color 0.1s;
 }
 
 .body-button:hover {
@@ -354,9 +263,9 @@ button:hover {
 }
 
 .body-button img.icon {
-    width: 1.4em;
-    height: 1.4em;
-    margin-left: 6px;
+    width: 1.2em;
+    height: 1.2em;
+    margin-left: 4px;
     vertical-align: middle;
 }
 
@@ -369,6 +278,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    margin-top: 30px;
+    gap: 4px;
+    margin-top: 16px;
 }
