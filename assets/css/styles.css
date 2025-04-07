@@ -9,7 +9,7 @@
     --light-color: #f4f4f4;
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
-    --font-size: 14px; /* Unified font size for all text */
+    --font-size: 18px; /* Unified font size for all text */
 }
 
 .headshot {
@@ -239,7 +239,7 @@ button:hover {
     border: 1px solid var(--primary-color);
     background-color: transparent;
     text-align: center;
-    font-size: x-large;
+    font-size: large;
     font-weight: var(--font-weight);
     color: var(--primary-color);
     text-decoration: none;
