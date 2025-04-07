@@ -9,7 +9,7 @@
     --light-color: #f4f4f4;
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
-    --font-size: 16px; /* Unified font size for all text */
+    --font-size: 18px; /* Unified font size for all text */
 }
 
 .headshot {
@@ -281,3 +281,10 @@ button:hover {
     gap: 4px;
     margin-top: 16px;
 }
+
+footer p {
+        font-size: smaller; /* Makes the text inside the footer smaller */
+    }
+
+
+    
