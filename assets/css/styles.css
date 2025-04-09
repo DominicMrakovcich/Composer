@@ -106,12 +106,12 @@ nav li.selected {
 
 nav a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     transition: color 0.2s;
 }
 
 nav a:hover {
-    color: var(--highlight-color);
+    color: var(--light-color);
 }
 
 /* Main Content */
@@ -235,16 +235,16 @@ button:hover {
     border: 1px solid var(--secondary-color);
     background-color: transparent;
     text-align: center;
-    font-size: large;
+    font-size: x-large;
     font-weight: var(--font-weight);
-    color: var(--text-color);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: background 0.1s, color 0.1s;
 }
 
 .body-button:hover {
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--light-color);
 }
 
 .body-button img.icon {
@@ -274,7 +274,7 @@ footer p {
 
 /* Global link color for all states */
 a {
-    color: var(--light-color); 
+    color: var(--secondary-color; 
     text-decoration: none;
 }
 
