@@ -274,7 +274,7 @@ footer p {
 
 /* Global link color for all states */
 a {
-    color: var(--secondary-color; 
+    color: var(--secondary-color); 
     text-decoration: none;
 }
 
