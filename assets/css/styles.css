@@ -258,6 +258,10 @@ button:hover {
     transform: scale(1.1);
 }
 
+.link {
+    color: var(--light-color);
+}
+
 /* Navigation Buttons - Displayed Vertically */
 .navigation-buttons {
     display: flex;
@@ -274,7 +278,7 @@ footer p {
 
 /* Global link color for all states */
 a {
-    color: var(--secondary-color); 
+    color: var(--light-color; 
     text-decoration: none;
 }
 
