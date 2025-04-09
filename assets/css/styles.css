@@ -6,14 +6,14 @@
     --secondary-color: white;
     --highlight-color: #C1D89C;
     --text-color: white;
-    --light-color: #90B0B6; /* Fixed the variable name here */
+    --light-color: #90B0B6; 
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
     --font-size: 18px; /* Unified font size for all text */
 }
 
 .headshot {
-    width: 250px; /* Adjust size as needed */
+    width: 250px; 
     height: auto;
 }
 
@@ -27,7 +27,7 @@
 /* Global Body Styling */
 body {
     font-family: var(--font-family);
-    font-size: var(--font-size); /* Unified font size for all text */
+    font-size: var(--font-size);
     font-weight: var(--font-weight);
     letter-spacing: 0.02em;
     background-color: var(--primary-color);
@@ -42,21 +42,22 @@ body {
     align-items: center;
 }
 
-/* Header - Now looks like a paragraph */
+/* Header Styling */
 header {
     width: 100%;
     max-width: 850px;
     padding: 0;
     text-align: center;
     background-color: var(--primary-color);
-    border: 1px solid var(--light-color);
+    border: none; /* Removed any border */
 }
+
 .site-title {
     color: var(--secondary-color);
 }
 
 header h1, h2, h3, h4 {
-    font-size: var(--font-size); /* Same as the body font size */
+    font-size: var(--font-size);
     font-weight: var(--font-weight);
     color: var(--highlight-color);
     margin: 0;
@@ -78,8 +79,8 @@ nav {
     padding: 4px 10px;
     display: flex;
     justify-content: center;
-    font-size: var(--font-size); /* Same font size as the body */
-    border-bottom: 1px solid var(--light-color);
+    font-size: var(--font-size);
+    border-bottom: 0px solid var(--light-color);
     z-index: 10;
 }
 
@@ -120,17 +121,22 @@ main {
     padding: 8px;
     margin-top: 60px;
     background-color: var(--primary-color);
-    border: 1px solid var(--secondary-color);
+    /* No border around main content */
+    border: none; 
 }
 
-/* Typography (Everything looks like a paragraph) */
-p, h1, h3 {
-    font-size: var(--font-size); /* Unified font size for all text */
+/* Typography */
+p {
+    font-size: var(--font-size);
     line-height: 1.4;
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    font-weight: var(--font-weight); /* Ensures no bold headers */
+    font-weight: var(--font-weight);
+}
+
+h1 { 
+    color: var(--highlight-color);
 }
 
 /* Horizontal Rule */
@@ -145,17 +151,24 @@ hr {
 /* Buttons */
 button {
     padding: 4px 8px;
-    font-size: 20px; /* Unified font size */
+    font-size: 20px;
     font-weight: var(--font-weight);
     border-radius: 16px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--secondary-color); /* White background */
+    color: var(--primary-color); /* Black text */
+    border: 2px solid var(--primary-color); /* Black border */
     cursor: pointer;
     transition: background-color 0.1s, transform 0.1s;
+    outline: none; /* Removes default outline */
+    box-shadow: none; /* Removes any box-shadow */
+}
+
+button:focus {
+    outline: none; /* Remove the focus outline */
 }
 
 button:hover {
-    background-color: var(--highlight-color);
+    background-color: var(--highlight-color); /* Hover color */
     transform: translateY(-1px);
 }
 
@@ -173,7 +186,7 @@ button:hover {
 
 @media (max-width: 480px) {
     body {
-        font-size: 14px; /* Slightly smaller font on small screens */
+        font-size: 14px;
     }
 
     nav {
@@ -189,6 +202,7 @@ button:hover {
     }
 }
 
+/* Keyframe Animation */
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-10deg); }
@@ -199,17 +213,17 @@ button:hover {
 
 /* Icon Styling */
 .icon {
-    width: 2em; /* Reduced size to make icons smaller */
-    height: 2em; /* Maintain aspect ratio */
+    width: 2em;
+    height: 2em;
     display: inline-block;
-    margin: 0 6px; /* Adjust spacing */
+    margin: 0 6px;
     opacity: 0.8;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .icon:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.1); 
+    opacity: 1;
 }
 
 /* Body Button Styling */
@@ -223,14 +237,14 @@ button:hover {
     text-align: center;
     font-size: large;
     font-weight: var(--font-weight);
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
     transition: background 0.1s, color 0.1s;
 }
 
 .body-button:hover {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .body-button img.icon {
@@ -251,15 +265,16 @@ button:hover {
     align-items: center;
     gap: 4px;
     margin-top: 16px;
+    color: var(--secondary-color);
 }
 
 footer p {
-    font-size: smaller; /* Makes the text inside the footer smaller */
+    font-size: smaller;
 }
 
 /* Global link color for all states */
 a {
-    color: var(--light-color); /* Fixed the variable name here */
+    color: var(--light-color); 
     text-decoration: none;
 }
 
@@ -267,5 +282,5 @@ a:visited,
 a:link,
 a:active,
 a:hover {
-    color: var(--light-color); /* Set the same color for all states */
+    color: var(--light-color); 
 }
