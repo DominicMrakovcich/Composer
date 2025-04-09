@@ -2,11 +2,11 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #333;
-    --secondary-color: #f4f4f4;
-    --highlight-color: red;
-    --text-color: #222;
-    --light-color: #f4f4f4;
+    --primary-color: black;
+    --secondary-color: white;
+    --highlight-color: #C1D89C;
+    --text-color: white;
+    --light-color: #90B0B6; /* Fixed the variable name here */
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
     --font-size: 18px; /* Unified font size for all text */
@@ -30,8 +30,8 @@ body {
     font-size: var(--font-size); /* Unified font size for all text */
     font-weight: var(--font-weight);
     letter-spacing: 0.02em;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     margin: 0;
     padding: 0;
     line-height: 1.4;
@@ -48,14 +48,17 @@ header {
     max-width: 850px;
     padding: 0;
     text-align: center;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     border: 1px solid var(--light-color);
+}
+.site-title {
+    color: var(--secondary-color);
 }
 
 header h1, h2, h3, h4 {
     font-size: var(--font-size); /* Same as the body font size */
     font-weight: var(--font-weight);
-    color: var(--primary-color);
+    color: var(--highlight-color);
     margin: 0;
     padding: 0;
     transition: color 0.2s;
@@ -97,7 +100,7 @@ nav li {
 
 nav li.selected {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--secondary-color);
 }
 
 nav a {
@@ -116,8 +119,8 @@ main {
     max-width: 850px;
     padding: 8px;
     margin-top: 60px;
-    background-color: var(--light-color);
-    border: 1px solid var(--light-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 }
 
 /* Typography (Everything looks like a paragraph) */
@@ -139,31 +142,10 @@ hr {
     margin: 6px 0;
 }
 
-/* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 4px;
-}
-
-th, td {
-    padding: 4px 6px;
-    border: 1px solid var(--light-color);
-    text-align: left;
-}
-
-th {
-    background-color: var(--secondary-color);
-}
-
-tr:hover {
-    background-color: #f7f7f7;
-}
-
 /* Buttons */
 button {
     padding: 4px 8px;
-    font-size: 20; /* Unified font size */
+    font-size: 20px; /* Unified font size */
     font-weight: var(--font-weight);
     border-radius: 16px;
     background-color: var(--primary-color);
@@ -236,12 +218,12 @@ button:hover {
     padding: 4px 8px;
     margin-bottom: 4px;
     border-radius: 16px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--secondary-color);
     background-color: transparent;
     text-align: center;
     font-size: large;
     font-weight: var(--font-weight);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: background 0.1s, color 0.1s;
 }
@@ -272,8 +254,18 @@ button:hover {
 }
 
 footer p {
-        font-size: smaller; /* Makes the text inside the footer smaller */
-    }
+    font-size: smaller; /* Makes the text inside the footer smaller */
+}
 
+/* Global link color for all states */
+a {
+    color: var(--light-color); /* Fixed the variable name here */
+    text-decoration: none;
+}
 
-    
+a:visited,
+a:link,
+a:active,
+a:hover {
+    color: var(--light-color); /* Set the same color for all states */
+}
