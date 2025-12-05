@@ -139,6 +139,10 @@ h1 {
     color: var(--highlight-color);
 }
 
+h2 {
+    font-size: 1.8em;
+}
+
 /* Horizontal Rule */
 hr {
     width: 80%;
