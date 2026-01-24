@@ -10,7 +10,7 @@
     --light-color: #90B0B6; 
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
-    --font-size: 18px;
+    --font-size: 14px; /* tightened from 18px */
 }
 
 *,
@@ -28,7 +28,7 @@ body {
     color: var(--secondary-color);
     margin: 0;
     padding: 0;
-    line-height: 1.4;
+    line-height: 1.3; /* tighter line spacing */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -40,9 +40,10 @@ body {
 header {
     width: 100%;
     max-width: 850px;
-    padding: 0;
+    padding: 0.4rem 0;   /* tightened */
     text-align: center;
     background-color: var(--primary-color);
+    margin-bottom: 0.6rem;
 }
 
 .site-title {
@@ -50,11 +51,65 @@ header {
 }
 
 header h1, h2, h3, h4 {
-    font-size: var(--font-size);
     font-weight: var(--font-weight);
-    color: var(--highlight-color);
     margin: 0;
     padding: 0;
+}
+
+/* ------------------- Hero Headline & Subtitle ------------------- */
+.hero-headline {
+    font-family: 'Megrim', sans-serif;
+    text-align: center;
+    font-size: 3em;
+    margin: 0;
+    line-height: 1.1;
+    color: red; /* hero is now red */
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-family: 'Megrim', sans-serif;
+    text-align: center;
+    font-size: 1.25em;
+    margin: 4px 0 12px 0;
+    font-weight: 400;
+    color: #DDD;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    font-style: normal;
+}
+
+/* ------------------- Links ------------------- */
+a {
+    color: red; /* all links red */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--light-color);
+}
+
+/* ------------------- Buttons ------------------- */
+.body-button {
+    position: relative;
+    display: inline-block;
+    padding: 6px 16px;
+    margin: 3px 0;
+    border-radius: 12px;
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: var(--font-weight);
+    color: var(--secondary-color); /* buttons keep original color */
+    text-decoration: none;
+    transition: background 0.1s, color 0.1s;
+}
+
+.body-button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
 }
 
 /* ------------------- Navigation ------------------- */
@@ -74,13 +129,13 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 8px;
+    gap: 6px; /* tighter */
     padding: 0;
     margin: 0;
 }
 
 nav li {
-    padding: 4px 8px;
+    padding: 3px 6px;
     border-radius: 18px;
     background-color: transparent;
     transition: background 0.2s;
@@ -93,8 +148,7 @@ nav li.selected {
 
 nav a {
     text-decoration: none;
-    color: var(--secondary-color);
-    transition: color 0.2s;
+    color: red; /* nav links also red */
 }
 
 nav a:hover {
@@ -112,140 +166,25 @@ main {
 
 p {
     font-size: var(--font-size);
-    line-height: 1.4;
+    line-height: 1.3;
     color: var(--text-color);
-    margin: 0;
+    margin: 0.2em 0; /* tighter */
     padding: 0;
     font-weight: var(--font-weight);
 }
 
-h1 { 
-    color: var(--highlight-color);
-}
-
-h2 {
-    font-size: 1.6em;
-    margin-top: 0.8em; /* tighter spacing above heading */
-    margin-bottom: 0.2em; /* tighter spacing below heading */
-}
-
-/* ------------------- Hero Headline & Subtitle ------------------- */
-/* Hero Headline */
-.hero-headline {
-    font-family: 'Megrim', sans-serif; /* stylish modern font */
-    text-align: center;
-    font-size: 3em;
-    margin: 0;                   /* tight to subtitle */
-    line-height: 1.1;            /* tight spacing */
-    color: var(--highlight-color);
-    letter-spacing: 1px;          /* subtle spacing for style */
-}
-
-/* Hero Subtitle */
-.hero-subtitle {
-    font-family: 'Megrim', sans-serif; /* same font, lighter feel */
-    text-align: center;
-    font-size: 1.25em;
-    margin: 4px 0 12px 0;          /* tight above and below */
-    font-weight: 400;               /* regular weight, not bold */
-    color: #DDD;                    /* lighter for contrast */
-    letter-spacing: 0.5px;          /* subtle spacing */
-    line-height: 1.2;
-    font-style: normal;             /* keeps it clean */
-}
-/* ------------------- Headshot ------------------- */
-.headshot {
-    width: 250px; 
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-
-/* ------------------- Buttons ------------------- */
-.body-button {
-    position: relative; /* for popups */
-    display: inline-block;
-    padding: 6px 16px;  /* tighter than before */
-    margin: 3px 0;      /* less vertical spacing */
-    border-radius: 12px;
-    border: 1px solid var(--secondary-color);
-    background-color: transparent;
-    text-align: center;
-    font-size: 1.2em; /* slightly smaller */
-    font-weight: var(--font-weight);
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: background 0.1s, color 0.1s;
-}
-
-.body-button:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-}
-
-/* ------------------- Vertical Navigation Buttons ------------------- */
-.navigation-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    margin-top: 12px; /* slightly tighter than before */
-    color: var(--secondary-color);
-}
-
-/* ------------------- Popup Tooltip ------------------- */
-.popup-text {
-    visibility: hidden;
-    opacity: 0;
-    width: max-content;
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: absolute;
-    left: 110%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: opacity 0.3s;
-}
-
-.popup-text::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -5px;
-    transform: translateY(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent #222 transparent transparent;
-}
-
-.body-button:hover .popup-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* ------------------- Footer ------------------- */
-footer p {
-    font-size: smaller;
-    text-align: center;
-    margin: 10px 0 5px 0;
-}
-
 /* ------------------- Lists ------------------- */
 main ul {
-    margin: 0.25em 0 0.75em 1.5em;
-    padding-left: 1.5em;
+    margin: 0.15em 0 0.5em 1.2em;
+    padding-left: 1.2em;
 }
 
 main ul ul {
-    margin: 0.25em 0 0.5em 1.5em;
+    margin: 0.1em 0 0.4em 1.2em;
 }
 
 main li {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.15em;
 }
 
 /* ------------------- Responsive ------------------- */
@@ -264,41 +203,10 @@ main li {
 
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 12px; /* even tighter on small screens */
     }
 
     main {
-        padding: 6px;
+        padding: 4px;
     }
-}
-
-/* ------------------- Misc ------------------- */
-hr {
-    width: 80%;
-    height: 1px;
-    background: var(--light-color);
-    border: none;
-    margin: 6px 0;
-}
-
-.icon {
-    width: 2em;
-    height: 2em;
-    display: inline-block;
-    margin: 0 6px;
-    opacity: 0.8;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.icon:hover {
-    transform: scale(1.1); 
-    opacity: 1;
-}
-
-@keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-10deg); }
-    100% { transform: rotate(0deg); }
 }
