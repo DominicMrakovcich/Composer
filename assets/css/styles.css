@@ -145,6 +145,8 @@ main {
     padding: 8px;
     margin-top: 20px;
     background-color: var(--primary-color);
+    text-align: justify; /* article-style justification */
+    text-justify: inter-word;
 }
 
 p {
@@ -201,3 +203,4 @@ main li {
         width: 100%;
     }
 }
+
