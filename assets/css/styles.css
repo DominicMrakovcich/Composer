@@ -295,20 +295,23 @@ a:hover {
 
 .hero-headline {
     text-align: center;
-    font-size: 2.5em;
-    margin: 10px 0 5px 0;
-    font-family: 'Georgia', serif;
-    color: #333;
+    font-size: 3em;              /* large, prominent */
+    margin: 0;                    /* remove default spacing */
+    font-family: 'Georgia', serif; 
+    color: #222;
+    line-height: 1.1;             /* tighter line spacing if subtitle is below */
 }
 
 .hero-subtitle {
     text-align: center;
-    font-size: 1.2em;
-    margin: 0 0 20px 0;
+    font-size: 1.25em;            /* smaller than title */
+    margin: 5px 0 20px 0;         /* tight spacing above, a bit below */
     font-family: 'Georgia', serif;
-    font-style: italic;
-    color: #555;
+    font-style: italic;            /* adds elegance */
+    color: #555;                   /* softer color than title */
+    letter-spacing: 1px;           /* subtle spacing for style */
 }
+
 
 /* Container setup for popup */
 .body-button {
