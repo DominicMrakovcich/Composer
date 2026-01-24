@@ -90,7 +90,7 @@ header h1, h2, h3, h4 {
 
 /* ------------------- Headshot ------------------- */
 .headshot {
-    width: 150px; 
+    width: 300px; 
     height: auto;
     display: block;
     margin: 10px auto;
