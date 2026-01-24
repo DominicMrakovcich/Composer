@@ -134,7 +134,7 @@ h2 {
     font-size: 3em;
     margin: 0;
     font-family: 'Georgia', serif;
-    color: #222;
+    color: var(--highlight-color);
     line-height: 1.1;
 }
 
@@ -144,7 +144,7 @@ h2 {
     margin: 2px 0 10px 0; /* very tight to title */
     font-family: 'Georgia', serif;
     font-style: italic;
-    color: #555;
+    color: var(--highlight-color);
     letter-spacing: 1px;
 }
 
