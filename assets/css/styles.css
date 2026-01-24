@@ -292,3 +292,21 @@ a:active,
 a:hover {
     color: var(--secondary-color); 
 }
+
+.hero-headline {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 10px 0 5px 0;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.hero-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 0 20px 0;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #555;
+}
+
