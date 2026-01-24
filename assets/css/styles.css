@@ -28,7 +28,7 @@ body {
     color: var(--secondary-color);
     margin: 0;
     padding: 0;
-    line-height: 1.3; /* tighter line spacing */
+    line-height: 1.3;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -40,14 +40,20 @@ body {
 header {
     width: 100%;
     max-width: 850px;
-    padding: 0.4rem 0;   /* tightened */
+    padding: 0.4rem 0;
     text-align: center;
     background-color: var(--primary-color);
     margin-bottom: 0.6rem;
 }
 
-.site-title {
-    color: var(--secondary-color);
+.site-title a {
+    color: #00cc66; /* home page link green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-title a:hover {
+    text-decoration: underline;
 }
 
 header h1, h2, h3, h4 {
@@ -79,9 +85,18 @@ header h1, h2, h3, h4 {
     font-style: normal;
 }
 
+/* ------------------- Headshot ------------------- */
+.headshot {
+    width: 150px; /* smaller photo */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 6px;
+}
+
 /* ------------------- Links ------------------- */
 a {
-    color: red; /* all links red */
+    color: red; /* all links red except home */
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -92,17 +107,16 @@ a:hover {
 
 /* ------------------- Buttons ------------------- */
 .body-button {
-    position: relative;
-    display: inline-block;
+    display: block; /* vertical stack */
     padding: 6px 16px;
-    margin: 3px 0;
+    margin: 4px auto; /* space between buttons */
     border-radius: 12px;
     border: 1px solid var(--secondary-color);
     background-color: transparent;
     text-align: center;
     font-size: 1.2em;
     font-weight: var(--font-weight);
-    color: var(--secondary-color); /* buttons keep original color */
+    color: var(--secondary-color);
     text-decoration: none;
     transition: background 0.1s, color 0.1s;
 }
@@ -112,47 +126,13 @@ a:hover {
     color: var(--light-color);
 }
 
-/* ------------------- Navigation ------------------- */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    backdrop-filter: blur(8px);
-    padding: 4px 10px;
+/* ------------------- Navigation Buttons Container ------------------- */
+.navigation-buttons {
     display: flex;
-    justify-content: center;
-    font-size: var(--font-size);
-    z-index: 10;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 6px; /* tighter */
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    padding: 3px 6px;
-    border-radius: 18px;
-    background-color: transparent;
-    transition: background 0.2s;
-}
-
-nav li.selected {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-nav a {
-    text-decoration: none;
-    color: red; /* nav links also red */
-}
-
-nav a:hover {
-    color: var(--light-color);
+    flex-direction: column; /* vertical stack */
+    align-items: center;
+    margin-top: 12px;
+    gap: 4px;
 }
 
 /* ------------------- Main Content ------------------- */
@@ -160,7 +140,7 @@ main {
     width: 100%;
     max-width: 850px;
     padding: 8px;
-    margin-top: 60px;
+    margin-top: 20px;
     background-color: var(--primary-color);
 }
 
@@ -168,7 +148,7 @@ p {
     font-size: var(--font-size);
     line-height: 1.3;
     color: var(--text-color);
-    margin: 0.2em 0; /* tighter */
+    margin: 0.2em 0;
     padding: 0;
     font-weight: var(--font-weight);
 }
@@ -195,18 +175,27 @@ main li {
     }
 
     .body-button {
-        width: 100%;
+        width: 80%;
         font-size: 1em;
         padding: 6px 12px;
+    }
+
+    .headshot {
+        width: 120px; /* smaller on mobile */
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 12px; /* even tighter on small screens */
+        font-size: 12px;
     }
 
     main {
         padding: 4px;
     }
+
+    .body-button {
+        width: 100%;
+    }
 }
+
