@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Global Styles */
+/* ------------------- Global Styles ------------------- */
 :root {
     --primary-color: black;
     --secondary-color: white;
@@ -9,22 +9,15 @@
     --light-color: #90B0B6; 
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
-    --font-size: 18px; /* Unified font size for all text */
+    --font-size: 18px;
 }
 
-.headshot {
-    width: 250px; 
-    height: auto;
-}
-
-/* Universal Box-sizing */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* Global Body Styling */
 body {
     font-family: var(--font-family);
     font-size: var(--font-size);
@@ -42,14 +35,13 @@ body {
     align-items: center;
 }
 
-/* Header Styling */
+/* ------------------- Header ------------------- */
 header {
     width: 100%;
     max-width: 850px;
     padding: 0;
     text-align: center;
     background-color: var(--primary-color);
-    border: none; /* Removed any border */
 }
 
 .site-title {
@@ -62,14 +54,9 @@ header h1, h2, h3, h4 {
     color: var(--highlight-color);
     margin: 0;
     padding: 0;
-    transition: color 0.2s;
 }
 
-header h1, h2, h3, h4:hover {
-    color: var(--highlight-color);
-}
-
-/* Navigation */
+/* ------------------- Navigation ------------------- */
 nav {
     position: fixed;
     top: 0;
@@ -80,7 +67,6 @@ nav {
     display: flex;
     justify-content: center;
     font-size: var(--font-size);
-    border-bottom: 0px solid var(--light-color);
     z-index: 10;
 }
 
@@ -114,18 +100,15 @@ nav a:hover {
     color: var(--light-color);
 }
 
-/* Main Content */
+/* ------------------- Main Content ------------------- */
 main {
     width: 100%;
     max-width: 850px;
     padding: 8px;
     margin-top: 60px;
     background-color: var(--primary-color);
-    /* No border around main content */
-    border: none; 
 }
 
-/* Typography */
 p {
     font-size: var(--font-size);
     line-height: 1.4;
@@ -140,51 +123,137 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
+    margin-top: 0.8em; /* tighter spacing above heading */
+    margin-bottom: 0.2em; /* tighter spacing below heading */
 }
 
-/* Horizontal Rule */
-hr {
-    width: 80%;
-    height: 1px;
-    background: var(--light-color);
-    border: none;
-    margin: 6px 0;
+/* ------------------- Hero Headline & Subtitle ------------------- */
+.hero-headline {
+    text-align: center;
+    font-size: 3em;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    color: #222;
+    line-height: 1.1;
 }
 
-/* Buttons */
-button {
-    padding: 4px 8px;
-    font-size: 20px;
+.hero-subtitle {
+    text-align: center;
+    font-size: 1.25em;
+    margin: 2px 0 10px 0; /* very tight to title */
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+/* ------------------- Headshot ------------------- */
+.headshot {
+    width: 250px; 
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* ------------------- Buttons ------------------- */
+.body-button {
+    position: relative; /* for popups */
+    display: inline-block;
+    padding: 6px 16px;  /* tighter than before */
+    margin: 3px 0;      /* less vertical spacing */
+    border-radius: 12px;
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    text-align: center;
+    font-size: 1.2em; /* slightly smaller */
     font-weight: var(--font-weight);
-    border-radius: 16px;
-    background-color: var(--secondary-color); /* White background */
-    color: var(--primary-color); /* Black text */
-    border: 2px solid var(--primary-color); /* Black border */
-    cursor: pointer;
-    transition: background-color 0.1s, transform 0.1s;
-    outline: none; /* Removes default outline */
-    box-shadow: none; /* Removes any box-shadow */
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: background 0.1s, color 0.1s;
 }
 
-button:focus {
-    outline: none; /* Remove the focus outline */
+.body-button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
 }
 
-button:hover {
-    background-color: var(--highlight-color); /* Hover color */
-    transform: translateY(-1px);
+/* ------------------- Vertical Navigation Buttons ------------------- */
+.navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px; /* slightly tighter than before */
+    color: var(--secondary-color);
 }
 
-/* Mobile Optimization */
+/* ------------------- Popup Tooltip ------------------- */
+.popup-text {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.popup-text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #222 transparent transparent;
+}
+
+.body-button:hover .popup-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ------------------- Footer ------------------- */
+footer p {
+    font-size: smaller;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+/* ------------------- Lists ------------------- */
+main ul {
+    margin: 0.25em 0 0.75em 1.5em;
+    padding-left: 1.5em;
+}
+
+main ul ul {
+    margin: 0.25em 0 0.5em 1.5em;
+}
+
+main li {
+    margin-bottom: 0.25em;
+}
+
+/* ------------------- Responsive ------------------- */
 @media (max-width: 768px) {
     main {
         margin-top: 80px;
         padding: 6px;
     }
 
-    button {
+    .body-button {
         width: 100%;
+        font-size: 1em;
+        padding: 6px 12px;
     }
 }
 
@@ -193,29 +262,20 @@ button:hover {
         font-size: 14px;
     }
 
-    nav {
-        padding: 2px 8px;
-    }
-
     main {
         padding: 6px;
     }
-
-    button {
-        padding: 6px 10px;
-    }
 }
 
-/* Keyframe Animation */
-@keyframes wiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-10deg); }
-    100% { transform: rotate(0deg); }
+/* ------------------- Misc ------------------- */
+hr {
+    width: 80%;
+    height: 1px;
+    background: var(--light-color);
+    border: none;
+    margin: 6px 0;
 }
 
-/* Icon Styling */
 .icon {
     width: 2em;
     height: 2em;
@@ -230,100 +290,10 @@ button:hover {
     opacity: 1;
 }
 
-/* Body Button Styling */
-.body-button {
-    display: inline-block;
-    padding: 4px 8px;
-    margin-bottom: 4px;
-    border-radius: 16px;
-    border: 1px solid var(--secondary-color);
-    background-color: transparent;
-    text-align: center;
-    font-size: x-large;
-    font-weight: var(--font-weight);
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: background 0.1s, color 0.1s;
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
 }
-
-.body-button:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-}
-
-.body-button img.icon {
-    width: 1.2em;
-    height: 1.2em;
-    margin-left: 4px;
-    vertical-align: middle;
-}
-
-.body-button:hover img.icon {
-    transform: scale(1.1);
-}
-
-.link {
-    color: var(--light-color);
-}
-
-/* Navigation Buttons - Displayed Vertically */
-.navigation-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    margin-top: 16px;
-    color: var(--secondary-color);
-}
-
-footer p {
-    font-size: smaller;
-}
-
-/* Global link color for all states */
-a {
-    color: var(--light-color; 
-    text-decoration: none;
-}
-
-a:visited,
-a:link,
-a:active,
-a:hover {
-    color: var(--secondary-color); 
-}
-
-.hero-headline {
-    text-align: center;
-    font-size: 3em;              /* large, prominent */
-    margin: 0;                    /* remove default spacing */
-    font-family: 'Georgia', serif; 
-    color: #222;
-    line-height: 1.1;             /* tighter line spacing if subtitle is below */
-}
-
-.hero-subtitle {
-    text-align: center;
-    font-size: 1.25em;            /* smaller than title */
-    margin: 5px 0 20px 0;         /* tight spacing above, a bit below */
-    font-family: 'Georgia', serif;
-    font-style: italic;            /* adds elegance */
-    color: #555;                   /* softer color than title */
-    letter-spacing: 1px;           /* subtle spacing for style */
-}
-
-
-/* Container setup for popup */
-.body-button {
-    position: relative; /* Required for popup positioning */
-    display: inline-block;
-    text-decoration: none;
-    color: #fff; /* adjust as needed */
-    padding: 10px 20px;
-    margin: 5px 0;
-    background-color: #333; /* your button color */
-    border-radius: 5px;
-    text-align: center;
-}
-
-
