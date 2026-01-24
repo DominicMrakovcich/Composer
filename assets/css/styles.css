@@ -5,12 +5,11 @@
 :root {
     --primary-color: black;
     --secondary-color: white;
-    --highlight-color: #C1D89C;
+    --highlight-color: red; /* use red for hero and links */
     --text-color: white;
-    --light-color: #90B0B6; 
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
-    --font-size: 14px; /* tightened from 18px */
+    --font-size: 14px;
 }
 
 *,
@@ -47,7 +46,7 @@ header {
 }
 
 .site-title a {
-    color: #00cc66; /* home page link green */
+    color: var(--secondary-color); /* home link white now */
     text-decoration: none;
     font-weight: bold;
 }
@@ -69,7 +68,7 @@ header h1, h2, h3, h4 {
     font-size: 3em;
     margin: 0;
     line-height: 1.1;
-    color: red; /* hero is now red */
+    color: var(--highlight-color); /* red */
     letter-spacing: 1px;
 }
 
@@ -79,7 +78,7 @@ header h1, h2, h3, h4 {
     font-size: 1.25em;
     margin: 4px 0 12px 0;
     font-weight: 400;
-    color: #DDD;
+    color: var(--secondary-color); /* white */
     letter-spacing: 0.5px;
     line-height: 1.2;
     font-style: normal;
@@ -87,7 +86,7 @@ header h1, h2, h3, h4 {
 
 /* ------------------- Headshot ------------------- */
 .headshot {
-    width: 150px; /* smaller photo */
+    width: 150px; 
     height: auto;
     display: block;
     margin: 10px auto;
@@ -96,40 +95,40 @@ header h1, h2, h3, h4 {
 
 /* ------------------- Links ------------------- */
 a {
-    color: red; /* all links red except home */
+    color: var(--highlight-color); /* all normal links red */
     text-decoration: none;
     transition: color 0.2s;
 }
 
 a:hover {
-    color: var(--light-color);
+    color: var(--secondary-color); /* hover white */
 }
 
 /* ------------------- Buttons ------------------- */
 .body-button {
-    display: block; /* vertical stack */
+    display: block;
     padding: 6px 16px;
-    margin: 4px auto; /* space between buttons */
+    margin: 4px auto;
     border-radius: 12px;
     border: 1px solid var(--secondary-color);
     background-color: transparent;
     text-align: center;
     font-size: 1.2em;
     font-weight: var(--font-weight);
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* buttons white */
     text-decoration: none;
     transition: background 0.1s, color 0.1s;
 }
 
 .body-button:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
+    background-color: var(--secondary-color); /* invert on hover */
+    color: var(--primary-color);
 }
 
 /* ------------------- Navigation Buttons Container ------------------- */
 .navigation-buttons {
     display: flex;
-    flex-direction: column; /* vertical stack */
+    flex-direction: column;
     align-items: center;
     margin-top: 12px;
     gap: 4px;
@@ -181,7 +180,7 @@ main li {
     }
 
     .headshot {
-        width: 120px; /* smaller on mobile */
+        width: 120px;
     }
 }
 
@@ -198,4 +197,3 @@ main li {
         width: 100%;
     }
 }
-
