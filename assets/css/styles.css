@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 
 /* ------------------- Global Styles ------------------- */
 :root {
@@ -129,25 +130,29 @@ h2 {
 }
 
 /* ------------------- Hero Headline & Subtitle ------------------- */
+/* Hero Headline */
 .hero-headline {
+    font-family: 'Megrim', sans-serif; /* stylish modern font */
     text-align: center;
     font-size: 3em;
-    margin: 0;
-    font-family: 'Georgia', serif;
+    margin: 0;                   /* tight to subtitle */
+    line-height: 1.1;            /* tight spacing */
     color: var(--highlight-color);
-    line-height: 1.1;
+    letter-spacing: 1px;          /* subtle spacing for style */
 }
 
+/* Hero Subtitle */
 .hero-subtitle {
+    font-family: 'Megrim', sans-serif; /* same font, lighter feel */
     text-align: center;
     font-size: 1.25em;
-    margin: 2px 0 10px 0; /* very tight to title */
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: var(--highlight-color);
-    letter-spacing: 1px;
+    margin: 4px 0 12px 0;          /* tight above and below */
+    font-weight: 400;               /* regular weight, not bold */
+    color: #DDD;                    /* lighter for contrast */
+    letter-spacing: 0.5px;          /* subtle spacing */
+    line-height: 1.2;
+    font-style: normal;             /* keeps it clean */
 }
-
 /* ------------------- Headshot ------------------- */
 .headshot {
     width: 250px; 
