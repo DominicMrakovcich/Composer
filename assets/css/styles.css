@@ -5,7 +5,7 @@
 :root {
     --primary-color: black;
     --secondary-color: white;
-    --highlight-color: red; /* use red for hero and links */
+    --highlight-color: red; /* red for hero and links */
     --text-color: white;
     --font-family: "Courier Prime", monospace;
     --font-weight: 400;
@@ -42,11 +42,15 @@ header {
     padding: 0.4rem 0;
     text-align: center;
     background-color: var(--primary-color);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem; /* tightened */
+}
+
+.site-title {
+    margin-bottom: -6px; /* pull closer to hero headline */
 }
 
 .site-title a {
-    color: var(--secondary-color); /* home link white now */
+    color: var(--secondary-color); /* home link white */
     text-decoration: none;
     font-weight: bold;
 }
@@ -86,7 +90,7 @@ header h1, h2, h3, h4 {
 
 /* ------------------- Headshot ------------------- */
 .headshot {
-    width: 250px; 
+    width: 150px; 
     height: auto;
     display: block;
     margin: 10px auto;
@@ -106,7 +110,7 @@ a:hover {
 
 /* ------------------- Buttons ------------------- */
 .body-button {
-    display: block;
+    display: block; /* vertical stack */
     padding: 6px 16px;
     margin: 4px auto;
     border-radius: 12px;
@@ -128,7 +132,7 @@ a:hover {
 /* ------------------- Navigation Buttons Container ------------------- */
 .navigation-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* vertical stack */
     align-items: center;
     margin-top: 12px;
     gap: 4px;
