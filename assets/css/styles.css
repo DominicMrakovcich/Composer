@@ -323,32 +323,4 @@ a:hover {
     text-align: center;
 }
 
-/* Hidden popup text */
-.popup-text {
-    visibility: hidden;
-    width: 200px; /* adjust size */
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 5px 10px;
-    border-radius: 5px;
-    
-    /* Positioning */
-    position: absolute;
-    left: 110%; /* show to the right of button */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-
-    /* Fade in animation */
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-/* Show popup on hover */
-.body-button:hover .popup-text {
-    visibility: visible;
-    opacity: 1;
-}
-
 
