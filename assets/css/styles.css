@@ -97,7 +97,7 @@ header h4 {
 
 /* ------------------- Headshot ------------------- */
 .headshot {
-    width: 380px;
+    width: 250px;
     max-width: 90vw;
     height: auto;
     display: block;
