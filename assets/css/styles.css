@@ -1,17 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 
-/* ------------------- Global Styles ------------------- */
+/* ------------------- Global Variables ------------------- */
 :root {
     --primary-color: black;
     --secondary-color: white;
-    --highlight-color: red; /* red for hero and links */
+    --highlight-color: red;
+
     --text-color: white;
     --font-family: "Courier Prime", monospace;
+
+    --font-size-base: 14px;
     --font-weight: 400;
-    --font-size: 14px;
+
+    /* spacing scale */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 32px;
 }
 
+/* ------------------- Reset ------------------- */
 *,
 *::before,
 *::after {
@@ -20,18 +30,18 @@
 
 body {
     font-family: var(--font-family);
-    font-size: var(--font-size);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight);
     letter-spacing: 0.02em;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     margin: 0;
     padding: 0;
-    line-height: 1.3;
+    line-height: 1.45;
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    min-height: 100vh;
     align-items: center;
 }
 
@@ -39,164 +49,168 @@ body {
 header {
     width: 100%;
     max-width: 850px;
-    padding: 0.4rem 0;
+    padding: var(--space-xs) 0;
     text-align: center;
-    background-color: var(--primary-color);
-    margin-bottom: 0.3rem; /* tightened */
+    margin-bottom: var(--space-xs);
 }
 
 .site-title {
-    margin-bottom: -6px; /* pull closer to hero headline */
+    margin-bottom: var(--space-xxs);
 }
 
 .site-title a {
-    color: var(--secondary-color); /* home link white */
+    color: var(--secondary-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .site-title a:hover {
     text-decoration: underline;
 }
 
-header h1, h2, h3, h4 {
-    font-weight: var(--font-weight);
+header h1,
+header h2,
+header h3,
+header h4 {
     margin: 0;
     padding: 0;
+    font-weight: var(--font-weight);
 }
 
-/* ------------------- Hero Headline & Subtitle ------------------- */
+/* ------------------- Hero ------------------- */
 .hero-headline {
     font-family: 'Megrim', sans-serif;
-    text-align: center;
-    font-size: 3em;
+    font-size: clamp(2.6rem, 6vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: 2px;
     margin: 0;
-    line-height: 1.1;
-    color: var(--highlight-color); /* red */
-    letter-spacing: 1px;
+    color: var(--highlight-color);
 }
 
 .hero-subtitle {
     font-family: 'Megrim', sans-serif;
-    text-align: center;
-    font-size: 1.25em;
-    margin: 4px 0 12px 0;
-    font-weight: 400;
-    color: var(--secondary-color); /* white */
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-    font-style: normal;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    margin: var(--space-xxs) 0 var(--space-sm);
+    color: var(--secondary-color);
+    opacity: 0.9;
 }
 
 /* ------------------- Headshot ------------------- */
 .headshot {
-    width: 300px; 
+    width: 380px;
+    max-width: 90vw;
     height: auto;
     display: block;
-    margin: 10px auto;
-    border-radius: 6px;
+    margin: var(--space-sm) auto var(--space-md);
+    border-radius: 8px;
 }
 
 /* ------------------- Links ------------------- */
 a {
-    color: var(--highlight-color); /* all normal links red */
+    color: var(--highlight-color);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.15s ease;
 }
 
 a:hover {
-    color: var(--secondary-color); /* hover white */
+    color: var(--secondary-color);
 }
 
 /* ------------------- Buttons ------------------- */
 .body-button {
-    display: block; /* vertical stack */
-    padding: 6px 16px;
-    margin: 4px auto;
-    border-radius: 12px;
+    display: block;
+    padding: 8px 18px;
+    margin: var(--space-xxs) auto;
+    border-radius: 14px;
     border: 1px solid var(--secondary-color);
     background-color: transparent;
     text-align: center;
-    font-size: 1.2em;
-    font-weight: var(--font-weight);
-    color: var(--secondary-color); /* buttons white */
+    font-size: 1.1em;
+    color: var(--secondary-color);
     text-decoration: none;
-    transition: background 0.1s, color 0.1s;
+    transition: background 0.15s ease, color 0.15s ease;
 }
 
 .body-button:hover {
-    background-color: var(--secondary-color); /* invert on hover */
+    background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
-/* ------------------- Navigation Buttons Container ------------------- */
+/* featured / primary action */
+.body-button.featured {
+    background-color: var(--highlight-color);
+    color: black;
+    border-color: var(--highlight-color);
+    font-weight: 700;
+}
+
+.body-button.featured:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ------------------- Navigation Buttons ------------------- */
 .navigation-buttons {
     display: flex;
-    flex-direction: column; /* vertical stack */
+    flex-direction: column;
     align-items: center;
-    margin-top: 12px;
-    gap: 4px;
+    margin-top: var(--space-sm);
+    gap: var(--space-xxs);
 }
 
 /* ------------------- Main Content ------------------- */
 main {
     width: 100%;
     max-width: 850px;
-    padding: 8px;
-    margin-top: 20px;
-    background-color: var(--primary-color);
-    text-align: justify; /* article-style justification */
+    padding: var(--space-sm);
+    margin-top: var(--space-md);
+    text-align: justify;
     text-justify: inter-word;
 }
 
 p {
-    font-size: var(--font-size);
-    line-height: 1.3;
+    font-size: var(--font-size-base);
+    line-height: 1.45;
+    margin: 0 0 var(--space-xs);
     color: var(--text-color);
-    margin: 0.2em 0;
-    padding: 0;
-    font-weight: var(--font-weight);
 }
 
 /* ------------------- Lists ------------------- */
 main ul {
-    margin: 0.15em 0 0.5em 1.2em;
-    padding-left: 1.2em;
-}
-
-main ul ul {
-    margin: 0.1em 0 0.4em 1.2em;
+    margin: 0 0 var(--space-sm) var(--space-md);
+    padding: 0;
 }
 
 main li {
-    margin-bottom: 0.15em;
+    margin-bottom: var(--space-xxs);
 }
 
 /* ------------------- Responsive ------------------- */
 @media (max-width: 768px) {
     main {
-        margin-top: 80px;
-        padding: 6px;
+        margin-top: var(--space-lg);
+        padding: var(--space-sm);
     }
 
     .body-button {
-        width: 80%;
+        width: 85%;
         font-size: 1em;
-        padding: 6px 12px;
     }
 
     .headshot {
-        width: 120px;
+        width: 75vw;
+        max-width: 360px;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     main {
-        padding: 4px;
+        text-align: left;
+        padding: var(--space-xs);
     }
 
     .body-button {
@@ -204,8 +218,7 @@ main li {
     }
 }
 
-/* ---------- Gentle Snowfall ---------- */
-
+/* ------------------- Gentle Snowfall ------------------- */
 .snow {
     pointer-events: none;
     position: fixed;
@@ -221,16 +234,11 @@ main li {
 }
 
 @keyframes snow-fall {
-    from {
-        transform: translateY(-200px);
-    }
-    to {
-        transform: translateY(100vh);
-    }
+    from { transform: translateY(-200px); }
+    to   { transform: translateY(100vh); }
 }
 
-/* ---------- Snow Accumulation ---------- */
-
+/* ------------------- Snow Accumulation ------------------- */
 .snow-accumulation {
     pointer-events: none;
     position: fixed;
@@ -259,4 +267,3 @@ main li {
         opacity: 1;
     }
 }
-
